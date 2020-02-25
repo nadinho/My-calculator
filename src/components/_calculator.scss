@@ -1,13 +1,27 @@
 .calculator {
   display: flex;
   flex-wrap: wrap;
-  background-color: red($color: #bb4646);
 }
 
 .calculator__output {
   flex-basis: 100%;
+  height: 50px;
+  border: 2px solid white;
+  outline: none;
+  text-align: center;
+  background-color: #f3f3f3;
+  font-size: 20px;
 }
 
-.calculator__input {
-  flex-basis: calc(100% / 3);
+.calc__input {
+  flex-basis: calc(100% / 4);
+  height: 60px;
+  background-color: lightslategrey;
+  border: 2px solid white;
+  outline: none;
+  font-size: 20px;
+}
+
+#calc__operator {
+  background-color: lightsteelblue;
 }
