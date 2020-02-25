@@ -1,0 +1,26 @@
+{
+  "name": "calculator-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "sass --watch src/styles.scss dist/styles.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nadinho/calculator-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nadinho/calculator-test/issues"
+  },
+  "homepage": "https://github.com/nadinho/calculator-test#readme",
+  "devDependencies": {
+    "htmlhint": "^0.11.0",
+    "prettier": "^1.19.1",
+    "sass": "^1.26.0"
+  }
+}
