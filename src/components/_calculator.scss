@@ -1,0 +1,13 @@
+.calculator {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: red($color: #bb4646);
+}
+
+.calculator__output {
+  flex-basis: 100%;
+}
+
+.calculator__input {
+  flex-basis: calc(100% / 3);
+}
