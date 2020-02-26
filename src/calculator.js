@@ -2,6 +2,7 @@ const calculatorOutput = document.querySelector(".calculator__output");
 const calcInputs = document.querySelectorAll(".calc__input");
 const calcResult = document.querySelector("#calc__long");
 const calcClear = document.querySelector(".calc__delete");
+const operatorButtons = document.querySelector(".calc__operator");
 
 function add(numberOne, numberTwo) {
   return numberOne + numberTwo;
