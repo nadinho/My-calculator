@@ -33,6 +33,13 @@ function allClear() {
 }
 calcClear.addEventListener("click", allClear);
 
-4, 5, 6;
-8, 9, 10;
-12;
+// BUTTONS
+
+function addInputEventListener(calcInputs) {
+  function handleInputClick() {
+    calculatorOutput.value = calcInputs.innerText;
+  }
+
+  calcInputs.addEventListener("click", handleInputClick);
+}
+calcInputs.forEach(addInputEventListener);
