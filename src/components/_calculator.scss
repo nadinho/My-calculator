@@ -18,7 +18,7 @@
   font-size: 40px;
 }
 
-.calc__input {
+.btn {
   flex-basis: calc(90% / 4);
   height: 80px;
   background-color: lightslategrey;
@@ -31,7 +31,7 @@
   color: whitesmoke;
 }
 
-.calc__input:hover {
+.btn:hover {
   background-color: #22ffff;
 }
 
@@ -46,4 +46,6 @@
 #calc__long {
   flex-grow: 2;
   border-radius: 5%;
+  max-width: 225px;
+  background-color: coral;
 }
