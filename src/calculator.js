@@ -2,8 +2,9 @@ const calculatorOutput = document.querySelector(".calculator__output");
 const calcInputs = document.querySelectorAll(".calc__input");
 const calcResult = document.querySelector("#calc__long");
 const calcClear = document.querySelector(".calc__delete");
-const operatorButtons = document.querySelector(".calc__operator");
+const calcOperators = document.querySelectorAll(".calc__operator");
 
+// MATH
 function add(numberOne, numberTwo) {
   return numberOne + numberTwo;
 }
@@ -17,30 +18,45 @@ function divide(numberOne, numberTwo) {
   return numberOne / numberTwo;
 }
 
-// EQUAL SIGN
-const numberOne = Number(calcInputs[4].innerText);
-const numberTwo = Number(calcInputs[8].innerText);
+let numberOne = 0;
+let numberTwo = 0;
+
 // calculatorOutput.value = add(numberOne, numberTwo);
-function handleClick() {
-  calculatorOutput.value = divide(numberOne, numberTwo);
+
+// EQUAL SIGN
+function handleResultClick() {
+  numberTwo = Number(calculatorOutput.value);
+  calculatorOutput.value = add(numberOne, numberTwo);
   console.log("clicked");
 }
-calcResult.addEventListener("click", handleClick);
+calcResult.addEventListener("click", handleResultClick);
 
-// DELETE
+// CLEAR BUTTON
 
-function allClear() {
-  calculatorOutput.value = 0;
+function clearAll() {
+  calculatorOutput.value = "";
 }
-calcClear.addEventListener("click", allClear);
+calcClear.addEventListener("click", clearAll);
 
-// BUTTONS
+// DIGIT BUTTONS
 
-function addInputEventListener(calcInputs) {
+function addInputEventListener(calcInput) {
   function handleInputClick() {
-    calculatorOutput.value = calcInputs.innerText;
+    calculatorOutput.value += calcInput.innerText;
   }
 
-  calcInputs.addEventListener("click", handleInputClick);
+  calcInput.addEventListener("click", handleInputClick);
 }
 calcInputs.forEach(addInputEventListener);
+
+// OPERATOR BUTTONS
+
+function addOperatorEventListener(calcOperator) {
+  function handleOperatorClick() {
+    numberOne = Number(calculatorOutput.value); //Zwischenspeicher
+    clearAll();
+  }
+  calcOperator.addEventListener("click", handleOperatorClick);
+}
+
+calcOperators.forEach(addOperatorEventListener);
