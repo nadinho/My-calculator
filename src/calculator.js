@@ -1,22 +1,24 @@
 import { calculate } from "./math.js";
+import { addLog } from "./logs.js";
 
 const calculatorOutput = document.querySelector(".calculator__output");
 const calcInputs = document.querySelectorAll(".calc__input");
 const calcResult = document.querySelector("#calc__long");
 const calcClear = document.querySelector(".calc__delete");
 const calcOperators = document.querySelectorAll(".calc__operator");
+const calcLogs = document.querySelector(".log");
 
 let numberOne = 0;
 let numberTwo = 0;
 let operator = "";
 
-// calculatorOutput.value = add(numberOne, numberTwo);
-
 // EQUAL SIGN
 function handleResultClick() {
   numberTwo = Number(calculatorOutput.value);
-  calculatorOutput.value = calculate(numberOne, numberTwo, operator);
+  const result = calculate(numberOne, numberTwo, operator);
   console.log("calculate");
+  const log = `${numberOne} ${operator} ${numberTwo} = ${result}`;
+  addLog(log, calcLogs);
 }
 calcResult.addEventListener("click", handleResultClick);
 
